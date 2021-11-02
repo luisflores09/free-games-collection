@@ -20,6 +20,10 @@ export const StyledHeader = styled.header `
                     margin-right: 1.5rem;
                     font-size: 1.5rem;
                     font-weight: 700;
+                    img {
+                        height: 50px;
+                        border-radius: 50%;
+                    }
                     a{
                         text-decoration: none;
                         color: inherit;
@@ -31,3 +35,18 @@ export const StyledHeader = styled.header `
             }
         }
     `;
+
+export const StyledMain = styled.main`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+`;
+
+export const StyledFooter = styled.footer`
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    justify-content: center;
+`

@@ -1,5 +1,11 @@
+import { StyledFooter } from "../styles";
+
 const Footer = (props) => {
-    return <h1>Footer</h1>
-}
+    return (
+        <StyledFooter>
+            <p>Copyright &copy; All Rights Reserverd Free-Games-Collection {new Date().getFullYear()}</p>
+        </StyledFooter>
+    );
+};
 
 export default Footer;

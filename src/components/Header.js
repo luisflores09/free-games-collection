@@ -8,10 +8,21 @@ const Header = (props) => {
             <h1>Free-Games-Collection</h1>
             <nav>
                 <ul>
-                    <li>
-                        <Link>Login</Link>
+                    {props.user ?
+                    <>
+                        <li>Welcome, {props.user.displayName} </li>
+                        <li>
+                            <img src={props.user.photoURL} alt={props.user.displayName} />
+                        </li>
+                        <li onClick={logOut}>Logout</li>
+                        <li>
+                            <Link to='/dashboard'>Dashboard</Link>
+                        </li>
+                    </>
+                        :<li>
+                            <Link to='/login'>Login</Link>
                     </li>
-                    <li onClick={logOut}>Logout</li>
+                    }
                 </ul>
             </nav>
         </StyledHeader>

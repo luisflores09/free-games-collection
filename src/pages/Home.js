@@ -1,5 +1,11 @@
+import { StyledMain } from "../styles";
+
 const Home = (props) => {
-    return <h1>Home</h1>
-}
+    return (
+        <StyledMain>
+            <h1>Home</h1>
+        </StyledMain>
+    );
+};
 
 export default Home;

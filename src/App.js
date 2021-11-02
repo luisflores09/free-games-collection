@@ -8,20 +8,30 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import {auth} from './services/firebase';
 
+
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => setUser(user));
+    return () => unsubscribe();
+  }, [])
+
   return (
     <>
-      <Header />
+      <Header user={user} />
         <Switch>
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route path='/login'>
-            <Login />
-          </Route>
-          <Route path='/dashboard'>
-            <Dashboard />
-          </Route>
+          <Route path='/login' render={() => (
+            user ? <Redirect to='/dashboard' /> : <Login />
+          )}      
+          />
+          <Route path='/dashboard' render={() =>(
+            user ? <Dashboard /> : <Redirect to='/login' />
+          )}
+          />
         </Switch>
       <Footer />
     </>

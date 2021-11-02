@@ -1,5 +1,11 @@
+import { StyledMain } from '../styles'
+
 const Dashboard = (props) => {
-    return <h1>Dashboard</h1>
-}
+    return (
+        <StyledMain>
+            <h1>Dashboard</h1>
+        </StyledMain>
+    );
+};
 
 export default Dashboard;
