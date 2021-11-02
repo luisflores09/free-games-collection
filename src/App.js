@@ -12,8 +12,29 @@ import {auth} from './services/firebase';
 function App() {
   const [user, setUser] = useState(null);
 
+  const [favGames, setFavGames] = useState([]);
+
+  const API_URL = 'http://localhost:3001/api/games';
+
+  const getFavGames = async () => {
+    const response = await fetch(API_URL);
+    const favGames = await response.json();
+    setFavGames(favGames);
+  }
+
+  const createFavGame = async game => {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: {'Content-type': 'Application/json'},
+      body: JSON.stringify(game)
+    });
+    getFavGames();
+  };
+
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => setUser(user));
+    getFavGames();
     return () => unsubscribe();
   }, [])
 
@@ -29,7 +50,12 @@ function App() {
           )}      
           />
           <Route path='/dashboard' render={() =>(
-            user ? <Dashboard /> : <Redirect to='/login' />
+            user ? (
+            <Dashboard 
+            favGames={favGames} 
+            createFavGame={createFavGame} 
+            /> 
+            ): <Redirect to='/login' />
           )}
           />
         </Switch>
