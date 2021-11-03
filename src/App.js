@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import {auth} from './services/firebase';
+import Show from './pages/Show';
 
 
 function App() {
@@ -38,12 +39,27 @@ function App() {
     return () => unsubscribe();
   }, [])
 
+  const url = 'http://localhost:1337/api/games';
+
+    const [game, setGame] = useState(null);
+
+    const getGame = async () => {
+        const response = await fetch(url);
+        const data = await response.json();
+        setGame(data);
+        console.log(data);
+    }
+
+    useEffect(() => {
+        getGame();
+      }, []);
+
   return (
     <>
       <Header user={user} />
         <Switch>
           <Route exact path='/'>
-            <Home />
+            <Home favGames={favGames} createFavGame={createFavGame} game={game} />
           </Route>
           <Route path='/login' render={() => (
             user ? <Redirect to='/dashboard' /> : <Login />
@@ -58,6 +74,9 @@ function App() {
             ): <Redirect to='/login' />
           )}
           />
+          <Route path='/games/:id'>
+            <Show game={game} />
+          </Route>
         </Switch>
       <Footer />
     </>
