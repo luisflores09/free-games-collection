@@ -26,6 +26,8 @@ const Show = (props) => {
       return (
         <StyledMain>
         <section>
+        { props.game.map(game => {
+                    return (
                     <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={16}>
@@ -34,30 +36,30 @@ const Show = (props) => {
                                         <CardMedia
                                             component="img"
                                             height="200"
-                                            image={props.game.thumbnail}
-                                            alt={props.game.title}
+                                            image={game.thumbnail}
+                                            alt={game.title}
                                         />
                                         <CardContent>
                                             <Typography gutterBottom variant="h1" component="div">
-                                                {props.game.title}
+                                                {game.title}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                {props.game.short_description}
+                                                {game.short_description}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                {props.game.game_url}
+                                                {game.game_url}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                {props.game.genre}
+                                                {game.genre}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                {props.game.platform}
+                                                {game.platform}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                {props.game.developer}
+                                                {game.developer}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                {props.game.release_date}
+                                                {game.release_date}
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
@@ -70,6 +72,9 @@ const Show = (props) => {
                             </Grid>
                         </Grid>
                     </Box>
+                )}
+                ) 
+            }
         <br />
         </section>
     </StyledMain>
