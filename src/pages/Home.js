@@ -51,12 +51,17 @@ const Home = (props) => {
                                                 <Typography gutterBottom variant="h5" component="div">
                                                     {game.title}
                                                 </Typography>
+                                                <Typography gutterBottom variant="subtitle1" component="div">
+                                                    {game.genre}
+                                                </Typography>
                                                 <Typography variant="body2" color="text.secondary">
-                                                    {game.shortDescription}
+                                                    {game.short_description}
                                                 </Typography>
                                             </CardContent>
                                             <CardActions>
-                                                <Link to={`/games/${game.id}`} >More Details</Link>
+                                                <Button>
+                                                <Link to={`/games/${game.id}`}>More Details</Link>
+                                                </Button>
                                             </CardActions>
                                         </Card>
                                     </Item>

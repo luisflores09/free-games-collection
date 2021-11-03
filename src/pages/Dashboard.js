@@ -179,7 +179,9 @@ const Dashboard = (props) => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
+                                <Button> 
                                 <Link to='/:id'>More Details</Link>
+                                </Button>
                             </CardActions>
                             </>
                         ))

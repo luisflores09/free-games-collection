@@ -26,38 +26,50 @@ const Show = (props) => {
       return (
         <StyledMain>
         <section>
-            { props.game.map(game => {
-                return (
                     <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={2}>
-                            <Grid item xs={8}>
+                            <Grid item xs={16}>
                                 <Item>
-                                    <Card sx={{ maxWidth: 345 }}>
+                                    <Card sx={{ maxWidth: 600 }}>
                                         <CardMedia
                                             component="img"
                                             height="200"
-                                            image={game.thumbnail}
-                                            alt={game.title}
+                                            image={props.game.thumbnail}
+                                            alt={props.game.title}
                                         />
                                         <CardContent>
-                                            <Typography gutterBottom variant="h5" component="div">
-                                                {game.title}
+                                            <Typography gutterBottom variant="h1" component="div">
+                                                {props.game.title}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                {game.shortDescription}
+                                                {props.game.short_description}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                {props.game.game_url}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                {props.game.genre}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                {props.game.platform}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                {props.game.developer}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                {props.game.release_date}
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Link to={`/games/${game.id}`} >More Details</Link>
+                                            <Button>
+                                            <Link>Add to Collection</Link>
+                                            </Button>
                                         </CardActions>
                                     </Card>
                                 </Item>
                             </Grid>
                         </Grid>
                     </Box>
-                )}
-            ) 
-        }
         <br />
         </section>
     </StyledMain>

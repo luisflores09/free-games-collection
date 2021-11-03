@@ -10,6 +10,10 @@ export const StyledHeader = styled.header `
         background-color: black;
         color: white;
         box-shadow: 1px 1px 3px 2px #808080;
+        .homenav {
+                text-decoration: none;
+                color: inherit;
+        }
         nav {
             display: flex;
             align-items: center;

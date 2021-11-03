@@ -5,7 +5,7 @@ import {StyledHeader} from '../styles';
 const Header = (props) => {
     return (
         <StyledHeader>
-            <Link to='/'>
+            <Link class='homenav' to='/'>
                 <h1>Free-Games-Collection</h1>
             </Link>
             <nav>
