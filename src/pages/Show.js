@@ -26,8 +26,8 @@ const Show = (props) => {
       return (
         <StyledMain>
         <section>
-        { props.game.map(game => {
-                    return (
+            { props.game.map(game => {
+                return (
                     <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={16}>
@@ -40,26 +40,26 @@ const Show = (props) => {
                                             alt={game.title}
                                         />
                                         <CardContent>
-                                            <Typography gutterBottom variant="h1" component="div">
+                                            <Typography gutterBottom variant="h2" component="div">
                                                 {game.title}
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
+                                            <Typography variant="subtitle1" color="text.secondary">
                                                 {game.short_description}
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {game.game_url}
+                                            <Typography variant="subtitle1" color="text.secondary">
+                                                Link to Game: <Link>{game.game_url}</Link>
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {game.genre}
+                                            <Typography variant="subtitle1" color="text.secondary">
+                                                Genre: {game.genre}
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {game.platform}
+                                            <Typography variant="subtitle1" color="text.secondary">
+                                                Platform: {game.platform}
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {game.developer}
+                                            <Typography variant="subtitle1" color="text.secondary">
+                                                Developer: {game.developer}
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {game.release_date}
+                                            <Typography variant="subtitle1" color="text.secondary">
+                                                Release Date: {game.release_date}
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
