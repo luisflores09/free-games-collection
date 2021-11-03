@@ -46,6 +46,8 @@ export const StyledMain = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;  
+  margin: 75px;
+  padding: 25px;
 `;
 
 export const StyledFooter = styled.footer`

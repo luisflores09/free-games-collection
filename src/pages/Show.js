@@ -32,10 +32,10 @@ const Show = (props) => {
                         <Grid container spacing={2}>
                             <Grid item xs={16}>
                                 <Item>
-                                    <Card sx={{ maxWidth: 600 }}>
+                                    <Card sx={{ maxWidth: 1000 }}>
                                         <CardMedia
                                             component="img"
-                                            height="200"
+                                            height="600"
                                             image={game.thumbnail}
                                             alt={game.title}
                                         />
