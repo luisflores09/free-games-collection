@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
-const Home = (props) => {
+const Home = ({game}) => {
 
     const Item = styled(Paper)(({ theme }) => ({
         ...theme.typography.body2,
@@ -34,7 +34,7 @@ const Home = (props) => {
         return (
             <StyledMain>
             <section>
-                { props.game.map(game => {
+                { game.map(game => {
                     return (
                         <Box sx={{ flexGrow: 1 }}>
                             <Grid container spacing={2}>
@@ -77,7 +77,7 @@ const Home = (props) => {
         )
     }
 
-    return props.game ? loaded() : loading();
+    return game ? loaded() : loading();
 };
 
 export default Home;
