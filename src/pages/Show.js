@@ -14,7 +14,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
 
-const Show = (props) => {
+const Show = ({game}) => {
 
     const Item = styled(Paper)(({ theme }) => ({
         ...theme.typography.body2,
@@ -23,15 +23,14 @@ const Show = (props) => {
         color: theme.palette.text.secondary,
       }));
 
+
       return (
         <StyledMain>
         <section>
-            { props.game.map(game => {
-                return (
-                    <Box sx={{ flexGrow: 1 }}>
-                        <Grid container spacing={2}>
-                            <Grid item xs={16}>
-                                <Item>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={2}>
+                    <Grid item xs={16}>
+                        <Item>
                                     <Card sx={{ maxWidth: 1000 }}>
                                         <CardMedia
                                             component="img"
@@ -68,13 +67,10 @@ const Show = (props) => {
                                             </Button>
                                         </CardActions>
                                     </Card>
-                                </Item>
-                            </Grid>
-                        </Grid>
-                    </Box>
-                )}
-                ) 
-            }
+            </Item>
+            </Grid>
+            </Grid>
+            </Box>
         <br />
         </section>
     </StyledMain>

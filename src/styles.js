@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 
 export const StyledHeader = styled.header `
+        position: sticky;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-left: 1rem;
         height: 5rem;
-        background-color: black;
+        background-color: darkred;
         color: white;
         box-shadow: 1px 1px 3px 2px #808080;
         .homenav {

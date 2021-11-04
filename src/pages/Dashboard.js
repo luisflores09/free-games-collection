@@ -86,24 +86,10 @@ const Dashboard = (props) => {
                     />
                     <input 
                         onChange={handleChange}
-                        value={formState.status}
-                        name='status'
-                        type='text'
-                        placeholder='status'
-                    />
-                    <input 
-                        onChange={handleChange}
                         value={formState.shortDescription}
                         name='shortDescription'
                         type='text'
                         placeholder='shortDescription'
-                    />
-                    <input 
-                        onChange={handleChange}
-                        value={formState.description}
-                        name='description'
-                        type='text'
-                        placeholder='description'
                     />
                     <input 
                         onChange={handleChange}
@@ -121,13 +107,6 @@ const Dashboard = (props) => {
                     />
                     <input 
                         onChange={handleChange}
-                        value={formState.publisher}
-                        name='publisher'
-                        type='text'
-                        placeholder='publisher'
-                    />
-                    <input 
-                        onChange={handleChange}
                         value={formState.developer}
                         name='developer'
                         type='text'
@@ -139,20 +118,6 @@ const Dashboard = (props) => {
                         name='releaseDate'
                         type='text'
                         placeholder='releaseDate'
-                    />
-                    <input 
-                        onChange={handleChange}
-                        value={formState.minimumRequirements}
-                        name='minimumRequirements'
-                        type='text'
-                        placeholder='minimumRequirements'
-                    />
-                    <input 
-                        onChange={handleChange}
-                        value={formState.screenshot}
-                        name='screenshot'
-                        type='text'
-                        placeholder='screenshot'
                     />
                     <input type="submit" value='Add Game' />
                 </form>
