@@ -21,7 +21,8 @@ function App() {
   const getFavGames = async () => {
     if(!user) return;
     const token = await user.getIdToken();
-    const response = await fetch(API_URL, {
+    const response = await fetch(API_URL, 
+      {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + token
@@ -47,7 +48,7 @@ function App() {
     return () => unsubscribe();
   }, [user])
 
-  const url = 'http://localhost:1337/api/games';
+  const url = 'http://localhost:3002/api/games';
   // const url = 'https://gamesapi99.herokuapp.com/api/games';
 
     const [game, setGame] = useState(null);
