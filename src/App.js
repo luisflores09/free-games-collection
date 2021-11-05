@@ -15,10 +15,18 @@ function App() {
 
   const [favGames, setFavGames] = useState([]);
 
-  const API_URL = 'http://localhost:3001/api/games';
+  // const API_URL = 'http://localhost:3001/api/games';
+  const API_URL = 'https://free-games-collection.herokuapp.com/api/games';
 
   const getFavGames = async () => {
-    const response = await fetch(API_URL);
+    if(!user) return;
+    const token = await user.getIdToken();
+    const response = await fetch(API_URL, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    });
     const favGames = await response.json();
     setFavGames(favGames);
   }
@@ -37,9 +45,10 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged(user => setUser(user));
     getFavGames();
     return () => unsubscribe();
-  }, [])
+  }, [user])
 
   const url = 'http://localhost:1337/api/games';
+  // const url = 'https://gamesapi99.herokuapp.com/api/games';
 
     const [game, setGame] = useState(null);
 
