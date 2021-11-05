@@ -26,7 +26,11 @@ const Show = ({game}) => {
 
       return (
         <StyledMain>
-        <section>
+        {
+            game.map(game => {
+                return (
+
+                    <section>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={16}>
@@ -37,7 +41,7 @@ const Show = ({game}) => {
                                             height="600"
                                             image={game.thumbnail}
                                             alt={game.title}
-                                        />
+                                            />
                                         <CardContent>
                                             <Typography gutterBottom variant="h2" component="div">
                                                 {game.title}
@@ -73,6 +77,9 @@ const Show = ({game}) => {
             </Box>
         <br />
         </section>
+                                            )
+                                        })
+                                    }
     </StyledMain>
     )
 }
