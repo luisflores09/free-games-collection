@@ -15,8 +15,8 @@ function App() {
 
   const [favGames, setFavGames] = useState([]);
 
-  // const API_URL = 'http://localhost:3001/api/games';
-  const API_URL = 'https://free-games-collection.herokuapp.com/api/games';
+  const API_URL = 'http://localhost:3001/api/games';
+  // const API_URL = 'https://free-games-collection.herokuapp.com/api/games';
 
   const getFavGames = async () => {
     if(!user) return;
